@@ -1,0 +1,29 @@
+server:
+ port: 9002
+ 
+logging:
+ level:
+  root: INFO
+ 
+spring:
+ application:
+  name: USER-SERVICE
+ zipkin:
+  base-url: http://localhost:9411/
+ datasource:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/javafsd
+  username: root
+  password: Asia@789727
+ jpa:
+  hibernate.ddl-auto: update
+  generate-ddl: true
+  
+resiliance4j.retry:
+ instances:
+  userService:
+   maxRetryAttempts: 3
+   maxDuration: 50000
+   
+   
+ 
